@@ -1,40 +1,42 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: go-adaptive-pool
+description: A production-grade adaptive worker pool for Go that handles dynamic scaling, backpressure, metrics and safe shutdown under load.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Production-grade adaptive worker pool for Go.
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /guides/getting-started/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/iyashjayesh/go-adaptive-pool
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Key Features
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Bounded Concurrency" icon="approve-check-circle">
+		Fixed queue size prevents unbounded memory growth and protects your system.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Adaptive Scaling" icon="rocket">
+		Workers scale up and down automatically based on queue utilization.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Explicit Backpressure" icon="warning">
+		Context-aware blocking when queue is full ensures you handle overload gracefully.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Prometheus Metrics" icon="random">
+		Built-in observability for queue depth, throughput, and latency.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+    <Card title="Safe Shutdown" icon="magnifier">
+        Graceful draining with deterministic worker cleanup.
+    </Card>
+    <Card title="Zero Global State" icon="puzzle">
+        Create multiple pool instances with isolated metrics and configuration.
+    </Card>
 </CardGrid>

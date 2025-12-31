@@ -1,24 +1,49 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { defineConfig } from 'astro/config';
 
+// https://astro.build/config
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'go-adaptive-pool',
+			social: [
+				{
+					icon: 'github',
+					label: 'GitHub',
+					href: 'https://github.com/iyashjayesh/go-adaptive-pool',
+				},
+			],
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Getting Started',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Introduction', slug: 'guides/introduction' },
+						{ label: 'Installation & Quick Start', slug: 'guides/getting-started' },
+					],
+				},
+				{
+					label: 'Usage',
+					items: [
+						{ label: 'Configuration', slug: 'guides/configuration' },
+						{ label: 'Core Concepts', slug: 'guides/core-concepts' },
+						{ label: 'Examples', slug: 'guides/examples' },
 					],
 				},
 				{
 					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					items: [
+						{ label: 'Benchmarks', slug: 'reference/benchmarks' },
+						{ label: 'Comparison', slug: 'reference/comparison' },
+						{ label: 'Design Principles', slug: 'reference/design-principles' },
+					],
+				},
+				{
+					label: 'Blog',
+					items: [
+						{ label: 'Scaling to 1M RPS', slug: 'blog/scaling-to-1m-rps' },
+					],
 				},
 			],
 		}),

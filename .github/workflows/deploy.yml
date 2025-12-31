@@ -1,0 +1,33 @@
+# Allows you to run this workflow manually from the Actions tab
+on:
+  push:
+    branches:
+      - main
+
+# Allows to concurrently run this workflow only if the previous run is canceled
+concurrency:
+  group: "github-pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Build website
+        run: npm run build
+      - name: Deploy to GitHub Pages
+        uses: withastro/action@v2
+        with:
+          # The publish directory where the build output is placed
+          publish-dir: ./dist
+          # Optional: pass a GitHub Pages token if needed
+          # token: ${{ secrets.GITHUB_TOKEN }}

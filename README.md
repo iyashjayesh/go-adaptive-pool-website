@@ -1,2 +1,3 @@
-# go-adaptive-pool-website
-landing page for go-adaptive-pool pkg
+# Go Adaptive Pool Website
+
+This is the website for the Go Adaptive Pool.

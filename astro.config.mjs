@@ -5,6 +5,8 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://iyashjayesh.github.io',
+	base: '/go-adaptive-pool-website',
 	integrations: [
 		starlight({
 			title: 'go-adaptive-pool',

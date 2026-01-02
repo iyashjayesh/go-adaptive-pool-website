@@ -45,6 +45,7 @@ export default defineConfig({
 					label: 'Blog',
 					items: [
 						{ label: 'Scaling to 1M RPS', slug: 'blog/scaling-to-1m-rps' },
+						{ label: 'Sizing Your Worker Pool Queue', slug: 'blog/how-to-size-your-worker-pool-queue' },
 					],
 				},
 			],

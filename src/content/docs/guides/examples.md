@@ -5,7 +5,8 @@ description: Common usage examples
 
 ## HTTP Server with Backpressure
 
-See [examples/http_server](https://github.com/iyashjayesh/go-adaptive-pool/tree/main/examples/http_server/main.go) for a complete HTTP server that:
+
+See [`examples/http_server`](https://github.com/iyashjayesh/go-adaptive-pool/tree/main/examples/http_server/main.go) for a complete HTTP server that:
 - Processes background jobs via the pool
 - Returns 503 when overloaded
 - Exposes metrics endpoint
@@ -18,7 +19,8 @@ go run main.go
 
 ## Batch Processing
 
-See [examples/batch_processor](https://github.com/iyashjayesh/go-adaptive-pool/tree/main/examples/batch_processor/main.go) for processing large batches with:
+
+See [`examples/batch_processor`](https://github.com/iyashjayesh/go-adaptive-pool/tree/main/examples/batch_processor/main.go) for processing large batches with:
 - Adaptive worker scaling
 - Real-time progress tracking
 - Throughput metrics

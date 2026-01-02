@@ -26,8 +26,8 @@ make run-comparison
 
 Run standard micro-benchmarks:
 
+
 ```bash
-cd benchmarks
 go test -bench=. -benchmem -benchtime=10s
 ```
 

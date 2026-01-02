@@ -54,8 +54,9 @@ if err := pool.Shutdown(ctx); err != nil {
 }
 ```
 
+
 **Shutdown behavior:**
-1. Stops accepting new jobs (returns `ErrPoolShutdown`).
-2. Drains in-flight jobs within the timeout.
-3. Terminates all workers deterministically.
-4. Returns an error if jobs were dropped due to timeout.
+1. Stops accepting new jobs (returns `ErrPoolShutdown`)
+2. Drains in-flight jobs within timeout
+3. Terminates all workers deterministically
+4. Returns error if jobs were dropped

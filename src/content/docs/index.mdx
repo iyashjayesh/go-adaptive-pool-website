@@ -1,6 +1,7 @@
 ---
 title: go-adaptive-pool
 description: A bounded worker pool for Go with an adaptive worker lifecycle and explicit backpressure, designed to keep systems stable under bursty load.
+template: splash
 hero:
   tagline: A bounded worker pool for Go with an adaptive worker lifecycle and explicit backpressure, designed to keep systems stable under bursty load.
   image:
@@ -17,23 +18,40 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
+
+## Overview
+
+> `go-adaptive-pool` is a bounded worker pool for Go with an adaptive worker lifecycle and explicit backpressure, designed to keep systems stable under bursty load.
+
+The goal is not to maximize throughput at all costs, but to prevent unbounded goroutine growth, avoid OOMs, and force overload to be handled explicitly instead of crashing later.
+
+## What does it do?
+
+This pool focuses on controlling concurrency and memory usage when job submission can outpace processing. It provides:
+
+- **Bounded concurrency** via a fixed-size queue
+- **Adaptive worker lifecycle**: Workers scale up and down based on queue pressure
+- **Explicit backpressure**: When the queue is full, submissions block or fail fast
+- **Observability**: Built-in Prometheus metrics
+- **Safe shutdown**: Graceful draining and no goroutine leaks
+
 ## Key Features
 
 <CardGrid stagger>
-	<Card title="Bounded Concurrency" icon="approve-check-circle">
-		Fixed queue size prevents unbounded memory growth and protects your system.
-	</Card>
-	<Card title="Adaptive Scaling" icon="rocket">
-		Workers scale up and down automatically based on queue utilization.
-	</Card>
-	<Card title="Explicit Backpressure" icon="warning">
-		Context-aware blocking when queue is full ensures you handle overload gracefully.
-	</Card>
-	<Card title="Prometheus Metrics" icon="random">
-		Built-in observability for queue depth, throughput, and latency.
-	</Card>
+  <Card title="Bounded Queue" icon="approve-check-circle">
+    Fixed queue size prevents unbounded memory growth and protects your system.
+  </Card>
+  <Card title="Adaptive Worker Lifecycle" icon="rocket">
+    Workers scale up and down automatically based on queue utilization, within configured limits.
+  </Card>
+  <Card title="Explicit Backpressure" icon="warning">
+    When overloaded, submissions block or are rejected. The caller must handle it.
+  </Card>
+  <Card title="Prometheus Metrics" icon="random">
+    Built-in observability for queue depth, throughput, latency, and more.
+  </Card>
     <Card title="Safe Shutdown" icon="magnifier">
-        Graceful draining with deterministic worker cleanup.
+        Graceful draining of queued jobs and clean worker shutdown with no leaks.
     </Card>
     <Card title="Zero Global State" icon="puzzle">
         Create multiple pool instances with isolated metrics and configuration.

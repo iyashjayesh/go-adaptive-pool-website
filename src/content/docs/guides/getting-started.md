@@ -5,8 +5,9 @@ description: How to install and start using go-adaptive-pool
 
 ## Installation
 
+
 ```bash
-go get github.com/iyashjayesh/go-adaptive-pool/adaptivepool
+go get github.com/iyashjayesh/go-adaptive-pool
 ```
 
 ## Quick Start
@@ -21,7 +22,7 @@ import (
     "log"
     "time"
 
-    "github.com/iyashjayesh/go-adaptive-pool/adaptivepool"
+    "github.com/iyashjayesh/go-adaptive-pool"
 )
 
 func main() {

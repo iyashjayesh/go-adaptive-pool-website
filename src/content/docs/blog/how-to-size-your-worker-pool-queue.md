@@ -66,7 +66,6 @@ Here's what I actually do in live systems (learned through painful trial and err
 pool, _ := adaptivepool.New(
     adaptivepool.WithMaxWorkers(32),
     adaptivepool.WithQueueSize(500), // About 15x workers
-    adaptivepool.WithMetricsEnabled(true),
 )
 ```
 

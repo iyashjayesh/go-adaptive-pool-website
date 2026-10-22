@@ -15,14 +15,17 @@ This pool focuses on controlling concurrency and memory usage when job submissio
 - **Bounded concurrency** via a fixed-size queue
 - **Adaptive worker lifecycle**: Workers scale up and down based on queue pressure
 - **Explicit backpressure**: When the queue is full, submissions block or fail fast
-- **Observability**: Built-in Prometheus metrics
-- **Safe shutdown**: Graceful draining and no goroutine leaks
+- **Observability**: Vendor-agnostic metrics (Prometheus and OpenTelemetry recorders included), structured `slog` logs and an `OnTaskDone` hook
+- **Retries**: Inline retries with pluggable backoff, jitter and time budgets
+- **Safe shutdown**: Graceful draining, no goroutine leaks, and every dropped job reported
 
 ## Key Features
 
 - **Bounded Queue**: Fixed queue size prevents unbounded memory growth and protects your system.
 - **Adaptive Worker Lifecycle**: Workers scale up and down automatically based on queue utilization, within configured limits.
 - **Explicit Backpressure**: When overloaded, submissions block or are rejected. The caller must handle it.
-- **Prometheus Metrics**: Built-in observability for queue depth, throughput, latency, and more.
-- **Safe Shutdown**: Graceful draining of queued jobs and clean worker shutdown with no leaks.
+- **Pluggable Metrics**: Queue depth, throughput, latency and failures by reason, exported to Prometheus, OpenTelemetry or your own backend.
+- **Retries with Backoff**: Inline retries with constant, linear or exponential backoff, jitter, time budgets and permanent errors.
+- **Task Outcomes**: Tag tasks with an ID and kind, and get a callback with the final status of every task.
+- **Safe Shutdown**: Graceful draining, clean worker shutdown with no leaks, and a report of any job a forced shutdown drops.
 - **Zero Global State**: Create multiple pool instances with isolated metrics and configuration.

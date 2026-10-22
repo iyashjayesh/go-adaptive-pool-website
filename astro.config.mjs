@@ -30,6 +30,8 @@ export default defineConfig({
 					items: [
 						{ label: 'Configuration', slug: 'guides/configuration' },
 						{ label: 'Core Concepts', slug: 'guides/core-concepts' },
+						{ label: 'Retries', slug: 'guides/retries' },
+						{ label: 'Observability', slug: 'guides/observability' },
 						{ label: 'Examples', slug: 'guides/examples' },
 					],
 				},

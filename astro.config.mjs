@@ -29,6 +29,7 @@ export default defineConfig({
 					label: 'Usage',
 					items: [
 						{ label: 'Configuration', slug: 'guides/configuration' },
+						{ label: 'Auto-Configuration', slug: 'guides/auto-configuration' },
 						{ label: 'Core Concepts', slug: 'guides/core-concepts' },
 						{ label: 'Retries', slug: 'guides/retries' },
 						{ label: 'Observability', slug: 'guides/observability' },

@@ -14,6 +14,7 @@ This pool focuses on controlling concurrency and memory usage when job submissio
 
 - **Bounded concurrency** via a fixed-size queue
 - **Adaptive worker lifecycle**: Workers scale up and down based on queue pressure
+- **Auto-configuration**: Size the pool from a workload profile and the CPUs and memory available to the process
 - **Explicit backpressure**: When the queue is full, submissions block or fail fast
 - **Observability**: Vendor-agnostic metrics (Prometheus and OpenTelemetry recorders included), structured `slog` logs and an `OnTaskDone` hook
 - **Retries**: Inline retries with pluggable backoff, jitter and time budgets

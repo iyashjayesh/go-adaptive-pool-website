@@ -60,6 +60,7 @@ func main() {
 ## Next steps
 
 - [Configuration](/go-adaptive-pool-website/guides/configuration/): every option and its default
+- [Auto-Configuration](/go-adaptive-pool-website/guides/auto-configuration/): size the pool from a workload profile
 - [Core Concepts](/go-adaptive-pool-website/guides/core-concepts/): backpressure, metrics and shutdown
 - [Retries](/go-adaptive-pool-website/guides/retries/): retry failed jobs with backoff
 - [Observability](/go-adaptive-pool-website/guides/observability/): task identity, metrics exporters, logs and the `OnTaskDone` hook

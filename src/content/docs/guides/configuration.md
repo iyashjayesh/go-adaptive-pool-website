@@ -4,7 +4,7 @@ description: Configuration options for go-adaptive-pool
 ---
 
 
-You can configure the pool using functional options passed to `adaptivepool.New()`. The most important options are:
+You can configure the pool using functional options passed to `adaptivepool.New()`. To size it from a workload profile and the CPUs and memory available instead, see [Auto-Configuration](/go-adaptive-pool-website/guides/auto-configuration/). The most important options are:
 
 ```go
 pool, err := adaptivepool.New(
